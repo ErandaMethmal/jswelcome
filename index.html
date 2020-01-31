@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        body {
+            background: #ffffff;
+            height: 100%;
+            width: 100%;
+            color: white;
+            font-family: 'Kanit', sans-serif;
+            font-size: 80px;
+        }
+        .textview{
+            margin:0 auto;
+            color: green;
+            width: auto;
+            text-align: center;
+            height: 100%;
+        }
+    </style>
+  </head>
+  <body>
+
+    <div id="welcome-text" class="textview"></div>
+    </div>
+
+<script type="text/javascript">
+  var i=0,text;
+  var redColor,greenColor,blueColor;
+  redColor = 0;
+  greenColor = 0;
+  blueColor =0;
+  text = "Hello! Welcome to my Javascript blog"
+  function showWelcomeMessage() {
+    if(i<text.length){
+      document.getElementById("welcome-text").innerHTML += text.charAt(i);
+      redColor = Math.floor(Math.random()*200)
+      greenColor = Math.floor(Math.random()*200)
+      blueColor = Math.floor(Math.random()*200)
+      document.getElementById("welcome-text").style.color = "rgb("+redColor+","+greenColor+","+blueColor+",1)";
+      document.getElementById("welcome-text").style.position = "absolute";
+      document.getElementById("welcome-text").style.left = `${Math.floor(Math.random()*400)}px`
+      document.getElementById("welcome-text").style.top = `${Math.floor(Math.random()*400)}px`
+      i++;
+      setTimeout(showWelcomeMessage,200);
+    }
+  }
+  setTimeout(showWelcomeMessage,5000);
+</script>
+
+
+  </body>
+</html>
+
+
+</html>
